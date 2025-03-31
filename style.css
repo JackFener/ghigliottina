@@ -1,0 +1,72 @@
+/* style.css (can be mostly empty) */
+
+/* Example: Add a subtle background pattern if desired */
+/* body {
+    background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
+} */
+
+/* Ensure input autofill doesn't override dark theme background */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1f2937 inset !important; /* Match bg-gray-800/900 */
+    -webkit-text-fill-color: #e5e7eb !important; /* Match text-gray-200/100 */
+    caret-color: #e5e7eb; /* Match text color */
+    border-radius: inherit; /* Keep the rounded corners */
+}
+
+:root {
+    --bg-color: #1b1c1d;
+    --gradient-bg: rgb(7,110,255);
+    --gradient-linear: linear-gradient(90deg, rgba(7,110,255,1) 0%, rgba(255,149,232,1) 50.24%, rgba(135,169,255,1) 102%);
+}
+
+
+/* Add a subtle pulse animation for placeholders */
+@keyframes pulse {
+  50% {
+    opacity: .6;
+  }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+h1.gradient-text {
+    /*background: rgb(7,110,255);*/
+    /*background: linear-gradient(90deg, rgba(7,110,255,1) 0%, rgba(255,149,232,1) 50.24%, rgba(135,169,255,1) 102%);*/
+    /*background: linear-gradient(90deg, #f1f7ff 100%, #eaf0ff 100%, #f4ebfb 100%);*/
+    background: var(--gradient-bg);
+    background: var(--gradient-linear);
+
+    -webkit-background-clip: text; /* apply background clip */
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+    background-image: var(--gradient-linear);
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%)}
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
